@@ -6,7 +6,7 @@ import com.mongodb.DBCollection;
 import com.mongodb.MongoClient;
 
 
-public class BulkUpdateWithSet {
+public class BulkUpdateWithMulti {
 
     public static void main(String[] args) {
         MongoClient mongoClient = new MongoClient("localhost", 27017);
@@ -15,7 +15,7 @@ public class BulkUpdateWithSet {
 
         BasicDBObject searchQuery = new BasicDBObject().append("name", "MongoDB");
         BasicDBObject newDocument = new BasicDBObject();
-        newDocument.append("$set", new BasicDBObject().append("count", 10));
+        newDocument.append("multi", new BasicDBObject().append("count", 20));
         collection.update(searchQuery, newDocument);
 
         //System.out.println(collection.find(new BasicDBObject().append("name", "MongoDB")));
