@@ -2,7 +2,6 @@ package com.practice.mongo;
 
 import com.mongodb.DB;
 import com.mongodb.DBCollection;
-import com.mongodb.Mongo;
 import com.mongodb.MongoClient;
 
 /**
@@ -17,6 +16,7 @@ public class ConnectivityTest {
         DB db = mongoClient.getDB("mydb");
         DBCollection table = db.getCollection("user");
         System.out.print(table.toString());
+        System.out.println("Dome");
 
     }
 }
